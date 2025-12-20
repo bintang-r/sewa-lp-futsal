@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('order_id');
+            $table->string('proof_order')->nullable();
+            $table->string('amount')->nullable();
             $table->timestamps();
         });
     }

@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable();
+            $table->string('admin_name')->nullable();
+            $table->string('no_wa')->nullable();
             $table->timestamps();
         });
     }

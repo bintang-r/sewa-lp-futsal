@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('customer_id')->nullable();
+            $table->foreignId('ground_id')->nullable();
+            $table->foreignId('schedule_operation_id')->nullable();
+            $table->dateTime('time_start')->nullable();
+            $table->dateTime('time_end')->nullable();
             $table->timestamps();
         });
     }

@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('grounds', function (Blueprint $table) {
             $table->id();
+            $table->string('ground_name')->nullable();
+            $table->boolean('status_active')->default(true)->nullable();
+            $table->string('hourly_price')->nullable();
             $table->timestamps();
         });
     }

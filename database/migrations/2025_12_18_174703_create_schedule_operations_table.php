@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('schedule_operations', function (Blueprint $table) {
             $table->id();
+            $table->dateTime('time');
+            $table->boolean('status_active')->nullable();
             $table->timestamps();
         });
     }
